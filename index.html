@@ -13,7 +13,7 @@
 <section class="catalog"><h2>🎒 我的小小任務庫</h2><div class="subjects" id="subjects"></div></section><p class="footer">慢慢來也沒關係，每完成一件事，都很棒。☀️</p></main><div class="confetti" id="confetti" aria-hidden="true"></div>
 <script>
 'use strict';
-const subjects=[{name:'國文',icon:'📖',tasks:['閱讀']},{name:'數學',icon:'🔢',tasks:['加加看15題','九九乘法','邏輯數學本']},{name:'英文',icon:'🔤',tasks:['單字10個','A到Z大小寫']},{name:'生活',icon:'🏡',tasks:['作家事一件','迷宮3頁']},{name:'體育',icon:'🏸',tasks:['打羽球','跑步','敷皮克敏一盆','體操']},{name:'思考',icon:'💭',tasks:[]}];
+const subjects=[{name:'國文',icon:'📖',tasks:['閱讀','弟子規']},{name:'數學',icon:'🔢',tasks:['加加看15題','九九乘法','邏輯數學本']},{name:'英文',icon:'🔤',tasks:['單字10個','A到Z大小寫']},{name:'生活',icon:'🏡',tasks:['作家事一件','迷宮3頁','樂高積木三頁','畫圖','黏土']},{name:'體育',icon:'🏸',tasks:['打羽球','跑步','敷皮克敏一盆','體操']},{name:'思考',icon:'💭',tasks:[]}];
 const $=id=>document.getElementById(id),today=()=>new Date().toLocaleDateString('sv-SE'),key='little-missions-v1';let tasks=[],rotation=0,busy=false;
 function save(){try{localStorage.setItem(key,JSON.stringify({date:today(),tasks}));}catch{}}
 function celebrate(){const box=$('confetti');box.replaceChildren();for(let i=0;i<24;i++){const s=document.createElement('span');s.textContent=['⭐','🌟','🎉','🌼'][i%4];s.style.left=Math.random()*100+'%';s.style.animationDelay=Math.random()*.5+'s';box.append(s);}setTimeout(()=>box.replaceChildren(),3300);}
